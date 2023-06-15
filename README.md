@@ -50,13 +50,29 @@ We used NVIDIA Apex (commit @ 4ef930c1c884fdca5f472ab2ce7cb9b505d26c1a) for mult
 Apex can be installed as follows:
 
 ```bash
-$ cd PATH_TO_INSTALL
 $ git clone https://github.com/NVIDIA/apex
 $ cd apex
 $ git reset --hard 4ef930c1c884fdca5f472ab2ce7cb9b505d26c1a
 $ pip install -v --no-cache-dir --global-option="--cpp_ext" --global-option="--cuda_ext" ./ 
 ```
-
+Change the following lines to the `_amp_state.py` file.
+```
+cd ~/apex/apex/
+```
+Change the following lines:
+```
+if TORCH_MAJOR == 0:
+    import collections.abc as container_abcs
+else:
+    from torch._six import container_abcs
+```
+with 
+```
+if TORCH_MAJOR == 0:
+    from torch._six import container_abcs
+else:
+    import collections.abc as container_abcs
+```
 
 #### Deformable Convolution V2 (DCNv2)
 
