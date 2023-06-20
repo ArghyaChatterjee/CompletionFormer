@@ -224,6 +224,7 @@ Then you can access the tensorboard via http://YOUR_SERVER_IP:6006
 $ cd THIS_PROJECT_ROOT/src
 
 # An example command for NYUv2 dataset testing
+$ pip3 install tensorboard
 $ python main.py --dir_data PATH_TO_NYUv2 --data_name NYU  --split_json ../data_json/nyu.json \
     --gpus 0 --max_depth 10.0 --num_sample 500 \
     --test_only --pretrain PATH_TO_WEIGHTS --save NAME_TO_SAVE
