@@ -30,18 +30,14 @@
 
 ## ⚙️ Setup
 
-Assuming a fresh [Anaconda](https://www.anaconda.com/download/) distribution, you can install the dependencies with:
+You can install the dependencies with:
 ```shell
-conda create -n completionformer python=3.8
-conda activate completionformer
 # For CUDA Version == 11.3
 pip install torch==1.10.1+cu113 torchvision==0.11.2+cu113 torchaudio==0.10.1+cu113
 pip install mmcv-full==1.4.4 mmsegmentation==0.22.1  
 pip install timm tqdm thop tensorboardX opencv-python ipdb h5py ipython 
 ```
 We ran our experiments with PyTorch 1.10.1, CUDA 11.3, Python 3.8 and Ubuntu 20.04.
-
-<!-- We recommend using a [conda environment](https://conda.io/docs/user-guide/tasks/manage-environments.html) to avoid dependency conflicts. -->
 
 #### NVIDIA Apex
 
@@ -137,6 +133,15 @@ Note that data lists for NYUv2 are borrowed from the [CSPN repository](https://g
 KITTI DC dataset is available at the [KITTI DC Website](http://www.cvlibs.net/datasets/kitti/eval_depth.php?benchmark=depth_completion).
 
 For color images, KITTI Raw dataset is also needed, which is available at the [KITTI Raw Website](http://www.cvlibs.net/datasets/kitti/raw_data.php).
+
+Follow this method for downloading KITTI dataset:
+```bash
+$ cd THIS_PROJECT_ROOT/utils
+$ wget -i kitti_archives_to_download.txt -P kitti_raw/
+$ cd kitti_raw
+$ unzip "*.zip"
+```
+Warning: it weights about 175GB, make sure you have enough space to unzip too!
 
 The overall data directory is structured as follows:
 
