@@ -246,9 +246,7 @@ To generate KITTI DC Online evaluation data:
 
 ```bash
 $ cd THIS_PROJECT_ROOT/src
-$ python main.py --dir_data PATH_TO_KITTI_DC --data_name KITTIDC --split_json ../data_json/kitti_dc_test.json \
-    --patch_height 240 --patch_width 1216 --gpus 0 --max_depth 90.0 \
-    --test_only --pretrain PATH_TO_WEIGHTS --save_image --save_result_only --save NAME_TO_SAVE
+$ python main.py --dir_data ~/kitti_depth --data_name KITTIDC --split_json ../data_json/kitti_dc_test.json --patch_height 240 --patch_width 1216 --gpus 0 --max_depth 90.0 --test_only --pretrain ../src/pretrained/KITTIDC_L1L2.pt --save_image --save_result_only --save ../results
 ```
 
 Images for submission can be found in THIS_PROJECT_ROOT/experiments/NAME_TO_SAVE/test/epoch%04d.
