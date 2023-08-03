@@ -235,9 +235,9 @@ $ python main.py --dir_data PATH_TO_NYUv2 --data_name NYU  --split_json ../data_
     --test_only --pretrain PATH_TO_WEIGHTS --save NAME_TO_SAVE
 
 # An example command for KITTI DC dataset testing
-$ python main.py --dir_data PATH_TO_KITTI_DC --data_name KITTIDC --split_json ../data_json/kitti_dc.json \
+$ python main.py --dir_data ~/kitti_depth --data_name KITTIDC --split_json ../data_json/kitti_dc.json \
     --patch_height 240 --patch_width 1216 --gpus 0 --max_depth 90.0 --top_crop 100 --test_crop \
-    --test_only --pretrain PATH_TO_WEIGHTS --save NAME_TO_SAVE
+    --test_only --pretrain ../src/pretrained/KITTIDC_L1L2.pt --save ../results
 ```
 
 **Pretrained Checkpoints**: [NYUv2](https://drive.google.com/drive/folders/1GlMVhI1Auo9noimR6NN0S-QLwL04ypCb?usp=sharing), [KITTI_DC](https://drive.google.com/drive/folders/1Tp1XAU7D7HOMq_iLEGzvt4I15g_HGBeM?usp=sharing)!
