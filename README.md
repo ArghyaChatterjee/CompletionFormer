@@ -75,7 +75,8 @@ else:
 Build and install DCN module.
 
 ```bash
-$ cd THIS_PROJECT_ROOT/src/model/deformconv
+$ cd ~/CompletionFormer/src/model/deformconv
+## You have to add --user flag to install it without sudo inside make.sh file
 $ sh make.sh
 ```
 The package will be installed here: `/home/user/.local/lib/python3.8/site-packages/DCN-1.0-py3.8-linux-x86_64.egg`
